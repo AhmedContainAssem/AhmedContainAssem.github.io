@@ -7,39 +7,43 @@
     <title>Ahmed Assem | Full Stack Developer & Content Creator</title>
     <!-- FontAwesome for high quality icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Poppins & Outfit -->
+    <!-- Google Fonts: Poppins, Outfit & Cairo for Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header/Navbar -->
     <header>
-        <a href="#" class="logo">Ahmed Assem</a>
+        <a href="#" class="logo" data-i18n="logo">Ahmed Assem</a>
         <div class="menu-btn" id="menuBtn">
             <i class="fa-solid fa-bars"></i>
         </div>
         <nav class="navigation" id="navigation">
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#services" data-i18n="nav-services">Services</a>
+            <a href="#projects" data-i18n="nav-projects">Projects</a>
+            <a href="#contact" data-i18n="nav-contact">Contact</a>
+            <button class="lang-btn" id="langBtn" aria-label="Toggle Language">
+                <i class="fa-solid fa-globe"></i>
+                <span id="langText">AR</span>
+            </button>
         </nav>
     </header>   
        
     <!-- Hero / Main Section -->
     <section class="main" id="home">
         <div class="hero-content">
-            <h2>Hello, I'm <br><span class="name-highlight">Ahmed Assem</span></h2>
+            <h2><span data-i18n="hero-hello">Hello, I'm </span><br><span class="name-highlight">Ahmed Assem</span></h2>
             <h3>
                 <span class="typewriter-text" id="typewriter">Full Stack Developer</span>
             </h3>
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="hero-desc">
                 Building high-performance web applications and crafting engaging tech content. Let's create something extraordinary together.
             </p>
             <div class="cta-buttons">
-                <a href="#projects" class="main-button">View My Work</a>
-                <a href="#contact" class="secondary-button">Let's Talk</a>
+                <a href="#projects" class="main-button" data-i18n="hero-cta-work">View My Work</a>
+                <a href="#contact" class="secondary-button" data-i18n="hero-cta-talk">Let's Talk</a>
             </div>
             
             <div class="social-icons">
@@ -56,7 +60,7 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-title">
-            <h2>My Services</h2>
+            <h2 data-i18n="title-services">My Services</h2>
             <div class="underline"></div>
         </div>
         <div class="services-container">
@@ -64,22 +68,22 @@
                 <div class="service-icon">
                     <i class="fa-solid fa-code"></i>
                 </div>
-                <h3>Full Stack Dev</h3>
-                <p>Developing modern, secure, and responsive web systems using Python, JavaScript, HTML, CSS, and WordPress.</p>
+                <h3 data-i18n="service-fs-title">Full Stack Dev</h3>
+                <p data-i18n="service-fs-desc">Developing modern, secure, and responsive web systems using Python, JavaScript, HTML, CSS, and WordPress.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fa-solid fa-microphone-lines"></i>
                 </div>
-                <h3>Content Creation</h3>
-                <p>Creating educational English lessons, self-improvement podcasts, and creative developer content.</p>
+                <h3 data-i18n="service-cc-title">Content Creation</h3>
+                <p data-i18n="service-cc-desc">Creating educational English lessons, self-improvement podcasts, and creative developer content.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
-                <h3>UI/UX Engineering</h3>
-                <p>Designing interactive, gorgeous interfaces with a sharp focus on user experience, speed, and clean layouts.</p>
+                <h3 data-i18n="service-ux-title">UI/UX Engineering</h3>
+                <p data-i18n="service-ux-desc">Designing interactive, gorgeous interfaces with a sharp focus on user experience, speed, and clean layouts.</p>
             </div>
         </div>
     </section>
@@ -87,7 +91,7 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="section-title">
-            <h2>Featured Projects</h2>
+            <h2 data-i18n="title-projects">Featured Projects</h2>
             <div class="underline"></div>
         </div>
         <div class="projects-container">
@@ -97,12 +101,12 @@
                     <i class="fa-solid fa-globe project-placeholder-icon"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Custom Web Solutions</h3>
+                    <h3 data-i18n="proj-web-title">Custom Web Solutions</h3>
                     <p class="project-tags">Python · JavaScript · HTML/CSS · WordPress</p>
-                    <p>Tailored web systems, interactive applications, and custom WordPress websites developed for speed, accessibility, and clean code.</p>
+                    <p data-i18n="proj-web-desc">Tailored web systems, interactive applications, and custom WordPress websites developed for speed, accessibility, and clean code.</p>
                     <div class="project-links">
-                        <a href="https://github.com/AhmedContainAssem" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                        <a href="https://github.com/AhmedContainAssem" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> <span data-i18n="proj-web-source">Source</span></a>
+                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="proj-web-demo">Demo</span></a>
                     </div>
                 </div>
             </div>
@@ -112,11 +116,11 @@
                     <i class="fa-solid fa-podcast project-placeholder-icon"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Self-Improvement Podcast</h3>
+                    <h3 data-i18n="proj-podcast-title">Self-Improvement Podcast</h3>
                     <p class="project-tags">Spotify · Mental Growth · Self-Awareness</p>
-                    <p>Audio series and episodes designed to boost mindfulness, focus, and general self-improvement to build a better version of yourself.</p>
+                    <p data-i18n="proj-podcast-desc">Audio series and episodes designed to boost mindfulness, focus, and general self-improvement to build a better version of yourself.</p>
                     <div class="project-links">
-                        <a href="https://creators.spotify.com/pod/show/1ILLU1dhaW95rAWJPpbtlD/episodes" target="_blank" class="project-link"><i class="fa-brands fa-spotify"></i> Spotify Channel</a>
+                        <a href="https://creators.spotify.com/pod/show/1ILLU1dhaW95rAWJPpbtlD/episodes" target="_blank" class="project-link"><i class="fa-brands fa-spotify"></i> <span data-i18n="proj-podcast-link">Spotify Channel</span></a>
                     </div>
                 </div>
             </div>
@@ -126,11 +130,11 @@
                     <i class="fa-solid fa-video project-placeholder-icon"></i>
                 </div>
                 <div class="project-info">
-                    <h3>English Teaching Hub</h3>
+                    <h3 data-i18n="proj-edu-title">English Teaching Hub</h3>
                     <p class="project-tags">YouTube · Education · Language Learning</p>
-                    <p>High-quality video tutorials, grammar simplified breakdowns, vocabulary cards, and guides targeting ESL learners on YouTube.</p>
+                    <p data-i18n="proj-edu-desc">High-quality video tutorials, grammar simplified breakdowns, vocabulary cards, and guides targeting ESL learners on YouTube.</p>
                     <div class="project-links">
-                        <a href="https://www.youtube.com/@MrAhemdAssem" target="_blank" class="project-link"><i class="fa-brands fa-youtube"></i> YouTube Channel</a>
+                        <a href="https://www.youtube.com/@MrAhemdAssem" target="_blank" class="project-link"><i class="fa-brands fa-youtube"></i> <span data-i18n="proj-edu-link">YouTube Channel</span></a>
                     </div>
                 </div>
             </div>
@@ -140,13 +144,13 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-title">
-            <h2>Get In Touch</h2>
+            <h2 data-i18n="title-contact">Get In Touch</h2>
             <div class="underline"></div>
         </div>
         <div class="contact-wrapper">
             <div class="contact-info">
-                <h3>Let's collaborate on your next project</h3>
-                <p>I am currently available for freelance opportunities, full-time engineering roles, and media/content partnerships.</p>
+                <h3 data-i18n="contact-subtitle">Let's collaborate on your next project</h3>
+                <p data-i18n="contact-desc">I am currently available for freelance opportunities, full-time engineering roles, and media/content partnerships.</p>
                 <div class="info-details">
                     <div class="info-item">
                         <i class="fa-solid fa-envelope"></i>
@@ -154,22 +158,22 @@
                     </div>
                     <div class="info-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Mansoura, Egypt</span>
+                        <span data-i18n="contact-location">Mansoura, Egypt</span>
                     </div>
                 </div>
             </div>
             <div class="contact-form-container">
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="name" placeholder="Your Name" data-i18n-placeholder="form-name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="email" id="email" placeholder="Your Email" data-i18n-placeholder="form-email" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <textarea id="message" rows="5" placeholder="Your Message" data-i18n-placeholder="form-message" required></textarea>
                     </div>
-                    <button type="submit" class="submit-button" id="submitBtn">Send Message</button>
+                    <button type="submit" class="submit-button" id="submitBtn" data-i18n="contact-submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -177,7 +181,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Ahmed Assem. All Rights Reserved.</p>
+        <p data-i18n="footer-text">&copy; 2026 Ahmed Assem. All Rights Reserved.</p>
         <a href="#home" class="scroll-top-btn"><i class="fa-solid fa-arrow-up"></i></a>
     </footer>
 

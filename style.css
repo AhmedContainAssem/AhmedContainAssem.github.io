@@ -98,7 +98,7 @@ header.scrolled {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.05rem;
-    margin-left: 30px;
+    margin-inline-start: 30px;
     position: relative;
     padding: 5px 0;
     transition: var(--transition-smooth);
@@ -108,7 +108,7 @@ header.scrolled {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
@@ -669,5 +669,68 @@ footer p {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+}
+
+/* Language Toggle Button Styles */
+.lang-btn {
+    background: rgba(0, 153, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-inline-start: 30px;
+    transition: var(--transition-smooth);
+}
+
+.lang-btn:hover {
+    background: rgba(0, 153, 255, 0.2);
+    border-color: var(--primary);
+    color: var(--text-main);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.lang-btn i {
+    font-size: 0.95rem;
+}
+
+/* Arabic Specific Layout Adjustments */
+html[lang="ar"] *, body.arabic * {
+    font-family: 'Cairo', 'Poppins', sans-serif;
+}
+
+html[lang="ar"] .navigation a {
+    font-family: 'Cairo', 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+html[lang="ar"] .lang-btn {
+    font-family: 'Cairo', 'Outfit', sans-serif;
+}
+
+/* Fix slide-in navigation drawer for mobile in Arabic RTL */
+@media (max-width: 768px) {
+    html[lang="ar"] .navigation {
+        right: auto;
+        left: -100%;
+        border-left: none;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    html[lang="ar"] .navigation.active {
+        left: 0;
+        right: auto;
+    }
+    
+    .lang-btn {
+        margin: 20px 0 0 0;
     }
 }

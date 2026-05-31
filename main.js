@@ -184,4 +184,171 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ========================================
+    // 7. Arabic / English Translation System
+    // ========================================
+    const translations = {
+        en: {
+            // Nav
+            'nav-services': 'Services',
+            'nav-projects': 'Projects',
+            'nav-contact': 'Contact',
+            // Hero
+            'hero-hello': "Hello, I'm ",
+            'hero-desc': 'Building high-performance web applications and crafting engaging tech content. Let\'s create something extraordinary together.',
+            'hero-cta-work': 'View My Work',
+            'hero-cta-talk': "Let's Talk",
+            // Services
+            'title-services': 'My Services',
+            'service-fs-title': 'Full Stack Dev',
+            'service-fs-desc': 'Developing modern, secure, and responsive web systems using Python, JavaScript, HTML, CSS, and WordPress.',
+            'service-cc-title': 'Content Creation',
+            'service-cc-desc': 'Creating educational English lessons, self-improvement podcasts, and creative developer content.',
+            'service-ux-title': 'UI/UX Engineering',
+            'service-ux-desc': 'Designing interactive, gorgeous interfaces with a sharp focus on user experience, speed, and clean layouts.',
+            // Projects
+            'title-projects': 'Featured Projects',
+            'proj-web-title': 'Custom Web Solutions',
+            'proj-web-desc': 'Tailored web systems, interactive applications, and custom WordPress websites developed for speed, accessibility, and clean code.',
+            'proj-web-source': 'Source',
+            'proj-web-demo': 'Demo',
+            'proj-podcast-title': 'Self-Improvement Podcast',
+            'proj-podcast-desc': 'Audio series and episodes designed to boost mindfulness, focus, and general self-improvement to build a better version of yourself.',
+            'proj-podcast-link': 'Spotify Channel',
+            'proj-edu-title': 'English Teaching Hub',
+            'proj-edu-desc': 'High-quality video tutorials, grammar simplified breakdowns, vocabulary cards, and guides targeting ESL learners on YouTube.',
+            'proj-edu-link': 'YouTube Channel',
+            // Contact
+            'title-contact': 'Get In Touch',
+            'contact-subtitle': "Let's collaborate on your next project",
+            'contact-desc': 'I am currently available for freelance opportunities, full-time engineering roles, and media/content partnerships.',
+            'contact-location': 'Mansoura, Egypt',
+            'contact-submit': 'Send Message',
+            // Footer
+            'footer-text': '© 2026 Ahmed Assem. All Rights Reserved.',
+            // Placeholders
+            'form-name': 'Your Name',
+            'form-email': 'Your Email',
+            'form-message': 'Your Message',
+        },
+        ar: {
+            // Nav
+            'nav-services': 'خدماتي',
+            'nav-projects': 'المشاريع',
+            'nav-contact': 'تواصل معي',
+            // Hero
+            'hero-hello': 'مرحبًا، أنا ',
+            'hero-desc': 'أبني تطبيقات ويب عالية الأداء وأصنع محتوى تقني جذّاب. دعنا نصنع شيئًا استثنائيًا معًا.',
+            'hero-cta-work': 'شاهد أعمالي',
+            'hero-cta-talk': 'تواصل معي',
+            // Services
+            'title-services': 'خدماتي',
+            'service-fs-title': 'تطوير ويب متكامل',
+            'service-fs-desc': 'تطوير أنظمة ويب حديثة وآمنة ومتجاوبة باستخدام Python و JavaScript و HTML و CSS و WordPress.',
+            'service-cc-title': 'صناعة المحتوى',
+            'service-cc-desc': 'إنشاء دروس تعليمية للغة الإنجليزية، وبودكاست لتطوير الذات، ومحتوى إبداعي للمطوّرين.',
+            'service-ux-title': 'هندسة واجهات المستخدم',
+            'service-ux-desc': 'تصميم واجهات تفاعلية ومذهلة مع تركيز حاد على تجربة المستخدم والسرعة والتنسيق النظيف.',
+            // Projects
+            'title-projects': 'مشاريع مميّزة',
+            'proj-web-title': 'حلول ويب مخصّصة',
+            'proj-web-desc': 'أنظمة ويب مخصّصة، تطبيقات تفاعلية، ومواقع WordPress مبنية للسرعة وسهولة الوصول والكود النظيف.',
+            'proj-web-source': 'الكود',
+            'proj-web-demo': 'عرض حي',
+            'proj-podcast-title': 'بودكاست تطوير الذات',
+            'proj-podcast-desc': 'سلسلة حلقات صوتية مصمّمة لتعزيز الوعي والتركيز وتطوير الذات لبناء نسخة أفضل من نفسك.',
+            'proj-podcast-link': 'قناة سبوتيفاي',
+            'proj-edu-title': 'منصة تعليم الإنجليزية',
+            'proj-edu-desc': 'دروس فيديو عالية الجودة، شروحات قواعد مبسّطة، بطاقات مفردات وأدلّة لمتعلّمي الإنجليزية على يوتيوب.',
+            'proj-edu-link': 'قناة يوتيوب',
+            // Contact
+            'title-contact': 'تواصل معي',
+            'contact-subtitle': 'لنتعاون في مشروعك القادم',
+            'contact-desc': 'أنا متاح حاليًا لفرص العمل الحر، والوظائف الهندسية بدوام كامل، وشراكات الإعلام والمحتوى.',
+            'contact-location': 'المنصورة، مصر',
+            'contact-submit': 'إرسال الرسالة',
+            // Footer
+            'footer-text': '© 2026 أحمد عاصم. جميع الحقوق محفوظة.',
+            // Placeholders
+            'form-name': 'اسمك',
+            'form-email': 'بريدك الإلكتروني',
+            'form-message': 'رسالتك',
+        }
+    };
+
+    const typewriterTexts = {
+        en: ["Full Stack Developer", "English Teacher", "Self-Improvement Podcaster", "Content Creator"],
+        ar: ["مطوّر ويب متكامل", "مُعلّم لغة إنجليزية", "بودكاستر تطوير الذات", "صانع محتوى"]
+    };
+
+    let currentLang = 'en';
+    const langBtn = document.getElementById('langBtn');
+    const langText = document.getElementById('langText');
+
+    function applyTranslations(lang) {
+        const dict = translations[lang];
+        // Translate text content
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+                el.textContent = dict[key];
+            }
+        });
+        // Translate placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (dict[key]) {
+                el.placeholder = dict[key];
+            }
+        });
+    }
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        const htmlEl = document.documentElement;
+
+        // Smooth transition: fade out, swap, fade in
+        document.body.style.transition = 'opacity 0.3s ease';
+        document.body.style.opacity = '0';
+
+        setTimeout(() => {
+            // Set direction and lang attribute
+            htmlEl.setAttribute('lang', lang);
+            htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            // Apply translations
+            applyTranslations(lang);
+
+            // Update toggle button label
+            if (langText) {
+                langText.textContent = lang === 'ar' ? 'EN' : 'AR';
+            }
+
+            // Restart typewriter with correct language
+            occupations.length = 0;
+            typewriterTexts[lang].forEach(t => occupations.push(t));
+            occupationIndex = 0;
+            charIndex = 0;
+            isDeleting = false;
+            if (typewriterElement) {
+                typewriterElement.textContent = '';
+            }
+
+            // Update submit button text during form submission state
+            if (submitBtn && !submitBtn.disabled) {
+                submitBtn.textContent = translations[lang]['contact-submit'];
+            }
+
+            // Fade back in
+            document.body.style.opacity = '1';
+        }, 300);
+    }
+
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            setLanguage(newLang);
+        });
+    }
 });
